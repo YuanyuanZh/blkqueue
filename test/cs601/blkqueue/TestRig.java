@@ -21,16 +21,21 @@ public class TestRig {
 		ThreadObserver consumerObserver = new ThreadObserver(consumerThread, MONITORING_PERIOD);
 
 		long start = System.nanoTime();
+        //System.out.println("start time:"+start);
 
 		Thread observerThread = new Thread(producerObserver);
 		observerThread.setName("ProducerObserver");
 		observerThread.start();
+        //System.out.println("ProduceObserver start*******");
 		observerThread = new Thread(consumerObserver);
 		observerThread.setName("ConsumerObserver");
 		observerThread.start();
+        //System.out.println("consumer start*******");
 
 		while ( !c.isDone() ) { } // wait for consumer to finish
+        //System.out.println("done*******");
 		long stop = System.nanoTime();
+       // System.out.println(stop+"%%%%%%%%%%%%");
 		producerObserver.terminate();
 		consumerObserver.terminate();
 
@@ -42,13 +47,13 @@ public class TestRig {
 		System.out.println("Producer: "+producerObserver);
 		System.out.println("Consumer: " +consumerObserver);
 
-		System.out.println("Producer:");
-		Map<String, Long> psamples = producerObserver.getMethodSamples();
-		dump(psamples);
-		System.out.println();
-		System.out.println("Consumer:");
-		Map<String, Long> csamples = consumerObserver.getMethodSamples();
-		dump(csamples);
+		//System.out.println("Producer:");
+		//Map<String, Long> psamples = producerObserver.getMethodSamples();
+		//dump(psamples);
+		//System.out.println();
+		//System.out.println("Consumer:");
+		//Map<String, Long> csamples = consumerObserver.getMethodSamples();
+		//dump(csamples);
 	}
 
 	public static void dump(Map<String, Long> histogram) {

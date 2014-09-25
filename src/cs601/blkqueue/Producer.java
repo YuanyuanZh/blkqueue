@@ -15,8 +15,12 @@ class Producer<T> implements Runnable {
 			while (sequence.hasNext()) {
 				T next = sequence.next();
 				queue.put(next);
+                //System.out.println("put data :"+next);
 			}
+            //System.out.println("~~~~~~~~~"+sequence.eof());
+
 			queue.put(sequence.eof());
+            //System.out.println("put data :"+sequence.eof());
 		}
 		catch (InterruptedException ie) {
 			ie.printStackTrace(System.err);

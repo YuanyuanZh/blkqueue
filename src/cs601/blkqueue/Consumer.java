@@ -14,16 +14,19 @@ class Consumer<T> implements Runnable {
 	public void run() {
 		try {
 			T eof = sequence.eof();
+            //System.out.println(("++++++++++"+eof));
 			T o = queue.take();
 			T prev = null;
 			while ( o != eof ) {
 				o = queue.take();
+                //System.out.println("data is "+o);
 				if ( prev!=null ) {
 					if ( !sequence.validSequenceMove(prev, o) ) {
 						throw new IllegalStateException("Invalid sequence move from "+prev+" to "+o);
 					}
 				}
 				prev = o;
+
 			}
 			done = true;
 		}
