@@ -14,8 +14,8 @@ class Consumer<T> implements Runnable {
 	public void run() {
 		try {
 			T eof = sequence.eof();
-            //System.out.println(("++++++++++"+eof));
 			T o = queue.take();
+
 			T prev = null;
 			while ( o != eof ) {
 				o = queue.take();

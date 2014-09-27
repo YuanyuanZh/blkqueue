@@ -8,7 +8,7 @@ package cs601.blkqueue;
  Consumer: (0 blocked + 6801 waiting + 0 sleeping) / 31115 samples = 21.86% wasted
  */
 public class TestBlockingQueue {
-	public static final int N = 80000000;
+	public static final int N = 8000000;
 
 	public static void main(String[] args) throws Exception {
 		MessageQueueAdaptor<Integer> queue = new MessageQueueAdaptor<Integer>(1024);

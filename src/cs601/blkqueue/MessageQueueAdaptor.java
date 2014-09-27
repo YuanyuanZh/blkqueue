@@ -14,7 +14,7 @@ class MessageQueueAdaptor<T> implements MessageQueue<T> {
 
 	MessageQueueAdaptor(int size) {
 
-    this.size=size;
+    //this.size=size;
     queue =new ArrayBlockingQueue<T>(size);
 
     }
@@ -28,7 +28,7 @@ class MessageQueueAdaptor<T> implements MessageQueue<T> {
 	@Override
 	public T take() throws InterruptedException {
 
-        t1=queue.take();
-        return t1;
+
+        return queue.take();
 	}
 }

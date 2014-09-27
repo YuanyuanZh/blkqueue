@@ -8,7 +8,7 @@ Producer: (0 blocked + 0 waiting + 1911 sleeping) / 6127 samples = 31.19% wasted
 Consumer: (0 blocked + 0 waiting + 2358 sleeping) / 6129 samples = 38.47% wasted
  */
 public class TestRingBuffer {
-	public static final int N = 80000000;
+	public static final int N = 8000000;
 
 	public static void main(String[] args) throws Exception {
 		RingBuffer<Integer> queue = new RingBuffer<Integer>(1024);

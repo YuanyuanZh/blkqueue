@@ -17,7 +17,7 @@ class Producer<T> implements Runnable {
 				queue.put(next);
                 //System.out.println("put data :"+next);
 			}
-            //System.out.println("~~~~~~~~~"+sequence.eof());
+
 
 			queue.put(sequence.eof());
             //System.out.println("put data :"+sequence.eof());
